@@ -1,0 +1,22 @@
+;
+; Archivo de zona para quesitos.com
+;
+$TTL	604800
+@	IN	SOA	dns1.quesitos.com. root.occ.ues.edu.sv. (
+			      2		; Serial
+			      5		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	dns1.quesitos.com.
+dns1	IN	A	192.168.143.194
+dns1	IN	AAAA	2001:db8:7::8
+@	IN	NS	dns2.quesitos.com.
+dns2	In	A	192.168.143.210
+dns2	IN	AAAA	2001:db8:7::40
+www	IN	A	192.168.143.200
+ww	IN	CNAME	www.quesitos.com.
+@	IN	A	192.168.143.223
+@	IN	MX 10	mail.quesitos.com.
+mail	IN	A	192.168.143.215

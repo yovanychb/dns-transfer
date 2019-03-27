@@ -1,0 +1,14 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	dns1.tocinitos.com. root.occ.ues.edu.sv. (
+			      1		; Serial
+			      5		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+            604800 ) ; Negative Cache TTL
+;
+@	IN	NS	dns1.tocinitos.com.
+8.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0	IN	PTR	www.tocinitos.com.
+0.1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0 IN  PTR www.tocinitos.com.

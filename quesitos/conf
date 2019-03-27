@@ -1,0 +1,13 @@
+#!/bin/bash
+/etc/init.d/bind9 start
+named-checkzone -i full quesitos.com  /etc/bind/db.quesitos
+named-checkzone -i full 192-223.143.168.192.in-addr.arpa  /etc/bind/db.192
+named-checkzone -i full 7.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa  /etc/bind/db.2001
+named-checkconf -z
+echo -e "nameserver $(hostname -I)" >> /etc/resolv.conf
+/etc/init.d/bind9 reload
+tcpdump -i eth0 port 53 
+
+
+
+

@@ -1,0 +1,44 @@
+//
+// Do any local configuration here
+//
+
+zone "tocinitos.com" {
+	type master;
+	file "/etc/bind/db.tocinitos";
+	allow-transfer  { 192.168.43.184; };
+	notify yes;
+	allow-query { any;};
+};
+
+zone "143.168.192.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.172";
+	allow-transfer  { 192.168.43.184; };
+	notify yes;
+	allow-query { any;};
+};
+
+zone "6.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa"{
+	type master;
+	file "/etc/bind/db.2001";
+	allow-transfer  { 192.168.43.184; };
+	notify yes;
+	allow-query { any;};
+};
+
+zone "quesitos.com" {
+	type slave;
+	masters  { 192.168.43.184; };
+	allow-query { any;};
+	file "/var/cache/bind/db.quesitos";
+};
+
+zone "7.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa" {
+	type slave;
+	masters  { 192.168.43.184; };
+	allow-query { any;};
+	file "/var/cache/bind/db.2001";
+};
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";

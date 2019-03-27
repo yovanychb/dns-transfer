@@ -1,0 +1,17 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+$ORIGIN 143.168.192.in-addr.arpa.
+@	IN	SOA	dns1.tocinitos.com. root.occ.ues.edu.sv. (
+			      1		; Serial
+			      5		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+            604800 ) ; Negative Cache TTL
+;
+@	IN	NS	dns1.tocinitos.com.
+185	IN	PTR	www.tocinitos.com. 
+175	IN	PTR	www.tocinitos.com.
+194	IN	PTR	www.quesitos.com.
+210	IN	PTR	www.quesitos.com.
